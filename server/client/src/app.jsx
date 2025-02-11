@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar/Navbar";
-
+import Hero from "./components/Navbar/Hero/Hero";
 
 
 export default function App() {
@@ -7,6 +7,7 @@ export default function App() {
      <>
      <main className="overflow-x-hidden">
         <Navbar />
+        < Hero />
      </main>
      
      </>
