@@ -17,7 +17,7 @@ const Hero = () => {
                 Order best cakes for happy lifeOrder best cakes for happy life
                 </p>
                 <div className="flex justify center md:justify-start">
-                  <button className=" hover:!scale-110 duration-300">Objednat si dort</button>
+                  <button className="text-pink-500 rounded-full hover:!scale-110 duration-300">Objednat si dort</button>
                 </div>
           </div>
         </div>
