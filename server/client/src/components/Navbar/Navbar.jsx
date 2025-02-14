@@ -2,7 +2,6 @@ import React from "react";
 import { SiCakephp } from "react-icons/si";
 import { GiShoppingCart } from "react-icons/gi";
 import { RiMenu4Line } from "react-icons/ri";
-import { useState } from "react";
 import ResponsiveMenu from "./ResponsiveMenu";
 
 const NavbarMenu = [
@@ -15,7 +14,7 @@ const NavbarMenu = [
   {
     id: 2,
     title: "Productes",
-    link: "#",
+    link: "",
   },
   {
     id: 3,
@@ -39,7 +38,7 @@ const Navbar = () => {
   return (
     <>
     <nav>
-      <div className="container flex justify-between items-center py-4 md:pt-4">
+      <div className="container flex justify-between items-center py-5 md:pt-4">
         <div className="text-2xl flex items-center gap-2 font-bold uppercase">
           <p className="text-purple-700">Cake</p>
           <p className="text-blue-500">Shop</p>
