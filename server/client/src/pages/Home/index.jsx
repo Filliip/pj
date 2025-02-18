@@ -9,6 +9,7 @@ export default function App() {
      <main className="overflow-x-hidden">
        <Navbar></Navbar>
        <Hero></Hero>
+       
         
      </main>
      
