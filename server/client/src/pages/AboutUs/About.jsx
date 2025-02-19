@@ -86,13 +86,7 @@ const Navbar = () => {
 </div>
 
 
-<div className="container rounded-full border-2 shadow-sm items-center flex-col py-25 bg-pink-300">
-<div>
-<p>
-
-</p>
-</div>
-</div>
+<div className="bg-black opacity-40 py-25 relative mt-220"></div>
 
 
     </>

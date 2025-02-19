@@ -5,6 +5,8 @@ import { FadeRight } from "../../../utility/animation";
 import { FadeUp } from "../../../utility/animation";
 import { FadeLeft } from "../../../utility/animation";
 import {motion} from "framer-motion"
+import myImage2  from "../../../assets/myImage2.jpg"
+
 
 const Hero = () => {
   return (
@@ -60,7 +62,37 @@ const Hero = () => {
         </div>
 
       </div>
+
+      <div className="bg-black opacity-45  py-25 relative mt-80 px-10 " >
+        <div className="bg-slate-300 max-w-lg border-spacing-2 px-10 rounded-lg">
+          <h1 className="text-black px-10 text-4xl font-averia">Contact</h1>
+          <ul className="text-black px-10 content-center font-popins justify-center top-5 relative">
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+          </ul>
+        </div>
+
+        <div className="pt-10">
+        <div className="bg-slate-300 max-w-lg border-spacing-2 px-10 rounded-lg ">
+          <h1 className="text-black px-10 text-4xl font-averia">Kde nás najdete</h1>
+          <ul className="text-black px-10 content-center font-popins justify-center top-5 relative">
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+            <li className="text-xl">aaaa</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+
     </section>
+
+
   );
 };
 
