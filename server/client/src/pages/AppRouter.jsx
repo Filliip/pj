@@ -4,6 +4,7 @@ import Home from "./Home/index"
 import Sucess from "./sucess/sucess";
 import Cart from "./kosik/cart";
 import About from "./AboutUs/About";
+import Created from "./cakes/Created"
 
 
 
@@ -16,6 +17,8 @@ export default function AppRouter() {
         <Route path="/sucess" element={<Sucess></Sucess>} />
         <Route path="/cart" element={<Cart></Cart>} />
         <Route path="/about" element={<About></About>} />
+        <Route path="/created/:id" element={<Created></Created>} />
+        
 
 
 
