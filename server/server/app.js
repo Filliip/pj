@@ -4,10 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose")
+
 mongoose.connect("mongodb+srv://admin:adminadmin@cluster0.qbfby.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() => {
   console.log("database connected")
 }).catch((err) => console.log(err))
 const cors = require("cors")
+app.post('/signup', (req, res) => {
+
+})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

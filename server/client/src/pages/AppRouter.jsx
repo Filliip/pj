@@ -6,6 +6,8 @@ import Cart from "./kosik/cart";
 import About from "./AboutUs/About";
 import Created from "./cakes/Created"
 import SignUp from "./singUp/SignUp"
+import LogIn from "./logIn/LogIn";
+
 
 
 
@@ -20,6 +22,7 @@ export default function AppRouter() {
         <Route path="/about" element={<About></About>} />
         <Route path="/created/:id" element={<Created></Created>} />
         <Route path="/signup" element={<SignUp></SignUp>} />
+        <Route path="/login" element={<LogIn></LogIn>} />
 
         
 

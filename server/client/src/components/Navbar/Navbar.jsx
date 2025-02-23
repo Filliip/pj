@@ -10,7 +10,7 @@ const NavbarMenu = [
     title: "Home",
     link: "/",
   },
-
+  
   {
     id: 2,
     title: "Productes",
@@ -28,8 +28,8 @@ const NavbarMenu = [
   },
   {
     id: 5,
-    title: "Contacts",
-    link: "#",
+    title: "Register",
+    link: "/SignUp",
   },
 ];
 
