@@ -40,8 +40,9 @@ exports.createCakes = async (req, res, next) => {
 
         const data = new Cakes({
             name: req.body.name,
-            temperature: req.body.temperature,
-            type: req.body.type
+            flavor: req.body.flavor,
+            type: req.body.type,
+            floor: req.body.floor,
         })
         const result = await data.save();
 
@@ -64,8 +65,9 @@ exports.updateCakes = async (req,res,next) => {
 
         const data = {
             name: req.body.name,
-            temperature: req.body.temperature,
-            type: req.body.type
+            flavor: req.body.flavor,
+            type: req.body.type,
+            floor: req.body.floor,
         }
         const result = await Cakes.findByIdAndUpdate(req.params.id, data);
 
@@ -88,8 +90,9 @@ exports.deleteCakes = async (req,res, next) => {
 
         const data = {
             name: req.body.name,
-            temperature: req.body.temperature,
-            type: req.body.type
+            flavor: req.body.flavor,
+            type: req.body.type,
+            floor: req.body.floor,
         }
         const result = await Cakes.findByIdAndDelete(req.params.id, data);
 

@@ -6,6 +6,8 @@ import { FadeRight } from "../../utility/animation";
 import {motion} from "framer-motion"
 import { FadeLeft } from "../../utility/animation";
 
+
+
 const NavbarMenu = [
   
   {

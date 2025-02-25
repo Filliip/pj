@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ListCell from "./ListCell";
 
+
+
 export default function List() {
   const [cakes, setCakes] = useState();
   const [isLoaded, setLoaded] = useState(false);
@@ -31,18 +33,18 @@ export default function List() {
   if (!isLoaded) {
     return (
       <>
-        <p>Light are loading...</p>
+        <p>cakes are loading...</p>
       </>
     );
   }
 
   return (
     <>
-      <h1>Cakes:</h1>
-      {cakes.map((light, index) => (
-        <ListCell key={index} {...light}/>
-      ))}
-      <Link to={"/"}>
+      
+      {cakes.map((cakes, index) => (
+        <ListCell key={index} {...cakes}/>
+      ))} 
+      <Link to={"/"} className="rounded-lg bg-purple-400 py-10 px-10 relative left-5 top-60">
         <button>Go back</button>
       </Link>
     </>

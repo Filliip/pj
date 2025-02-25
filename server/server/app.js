@@ -9,9 +9,6 @@ mongoose.connect("mongodb+srv://admin:adminadmin@cluster0.qbfby.mongodb.net/?ret
   console.log("database connected")
 }).catch((err) => console.log(err))
 const cors = require("cors")
-app.post('/signup', (req, res) => {
-
-})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
