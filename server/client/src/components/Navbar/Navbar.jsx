@@ -68,6 +68,9 @@ const Navbar = () => {
       </div>
     </nav>
     <ResponsiveMenu open={open}/>
+
+
+    
     </>
   );
 };

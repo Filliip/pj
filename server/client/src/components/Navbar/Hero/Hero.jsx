@@ -5,14 +5,12 @@ import { FadeRight } from "../../../utility/animation";
 import { FadeUp } from "../../../utility/animation";
 import { FadeLeft } from "../../../utility/animation";
 import { motion } from "framer-motion";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+
 
 const Hero = () => {
   return (
     <>
-      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px] relative">
+      <div className=" bg-gradient-to-r from-pink-500 via-pink-200 to-purple-200 container grid grid-cols-1 md:grid-cols-2 min-h-[650px] relative">
         <div className="flex flex-col justify-center py-14 md:py-0 relative z-10">
           <div className="text-center md:text-left space-y-6 lg:max-w-[400px]">
             <motion.h1
@@ -69,45 +67,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="bg-black opacity-45  py-25 relative mt-80 px-10 ">
-        <div className="bg-slate-300 max-w-lg border-spacing-2 px-10 rounded-lg">
-          <h1 className="text-black px-10 text-4xl font-averia">Contact </h1>{" "}
-          <BsFillTelephoneFill className="" />
-          <ul className="text-black px-10 content-center font-popins justify-center top-5 relative">
-            <li className="text-xl">aaaa</li>
-            <li className="text-xl">aaaa</li>
-            <li className="text-xl">aaaa</li>
-            <li className="text-xl">aaaa</li>
-            <li className="text-xl">aaaa</li>
-          </ul>
-        </div>
+      
 
-        <div className="pt-10">
-          <div className="bg-slate-300 max-w-lg border-spacing-2 px-10 rounded-lg ">
-            <h1 className="text-black px-10 text-4xl font-averia">
-              Kde nás najdete ?
-            </h1>
-            <FaMapMarkerAlt />
-
-            <ul className="text-black px-10 content-center font-popins justify-center top-5 relative">
-              <li className="text-xl">aaaa</li>
-              <li className="text-xl">aaaa</li>
-              <li className="text-xl">aaaa</li>
-              <li className="text-xl">aaaa</li>
-              <li className="text-xl">aaaa</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-20 bg-white items-center">
-        <div className="w-full h-full bg-white ">
-          <div>
-          <FaYoutube className="text-black"/>
-          </div>
-        </div>
-        
-      </div>
+      
     </>
   );
 };
