@@ -11,6 +11,8 @@ import CreatecakesForm from "./cakes/CreateForm";
 import List from "./cakes/List";
 import View from "./cakes/View";
 import UpdateForm from "./cakes/UpdateForm";
+import LearnMore from "./LearnMore/LearnMore";
+
 
 export default function AppRouter() {
   return (
@@ -24,6 +26,7 @@ export default function AppRouter() {
         <Route path="/created/:id" element={<Created></Created>} />
         <Route path="/signup" element={<SignUp></SignUp>} />
         <Route path="/login" element={<LogIn></LogIn>} />
+        <Route path="/learnmore" element={<LearnMore></LearnMore>} />
 
         <Route path="/" element={<Home />} />
         <Route path="/create-cakes" element={<CreatecakesForm />} />

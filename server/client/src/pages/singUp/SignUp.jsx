@@ -16,7 +16,9 @@ export default function SignUp() {
   };
 
   return (
-    <div className="bg-white p-3 rounded  w-155">
+    <>
+    <div className="flex items-center justify-center min-h-screen">
+    <div className="bg-white p-3 rounded-lg  w-155">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-8 pt-5">
@@ -57,17 +59,14 @@ export default function SignUp() {
             onChange={(e) => setPasword(e.target.value)}
           />
         </div>
-        <button type="submit" className="primary-btn w-100 rounded-0">
+        <button type="submit" className="primary-btn w-50 rounded-0">
           Register
         </button>
       </form>
-      <p>Already have account</p>
-      <Link
-        to={"/LogIn"}
-        className="primary-btn border w-100  rounded-0 text-decoration-none"
-      >
-        Log-in
-      </Link>
+      
+      
     </div>
+    </div>
+    </>
   );
 }
