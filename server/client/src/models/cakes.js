@@ -29,7 +29,7 @@ export const getCakesById = async (id) => {
   };
 };
 export const createCakes = async (formData) => {
-  const req = await fetch(`http://localhost:3000/cakes`, {
+  const req = await fetch(`http://localhost:5173/cakes`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

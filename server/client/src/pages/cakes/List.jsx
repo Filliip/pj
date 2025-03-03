@@ -48,5 +48,7 @@ export default function List() {
         <button>Go back</button>
       </Link>
     </>
+    
   );
 }
+

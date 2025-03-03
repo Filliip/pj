@@ -69,7 +69,7 @@ export default function Update() {
         <input
           type="number"
           name="temperature"
-          placeholder="Enter temperature"
+          placeholder=""
           required
           onChange={handleInput}
           defaultValue={cakes.temperature}

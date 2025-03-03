@@ -1,3 +1,4 @@
+const { body } = require("framer-motion/client");
 const Cakes = require("../models/cakes")
 
 exports.getAllCakes = async (req, res, next) => {
@@ -38,10 +39,14 @@ exports.getCakesById = async (req, res, next) => {
 exports.createCakes = async (req, res, next) => {
     try {
 
+        console.log(
+            req,res,body
+        )
+
         const data = new Cakes({
             name: req.body.name,
             flavor: req.body.flavor,
-            type: req.body.type,
+            glaze: req.body.glaze,
             floor: req.body.floor,
         })
         const result = await data.save();
@@ -66,7 +71,7 @@ exports.updateCakes = async (req,res,next) => {
         const data = {
             name: req.body.name,
             flavor: req.body.flavor,
-            type: req.body.type,
+            glaze: req.body.glaze,
             floor: req.body.floor,
         }
         const result = await Cakes.findByIdAndUpdate(req.params.id, data);
@@ -91,7 +96,7 @@ exports.deleteCakes = async (req,res, next) => {
         const data = {
             name: req.body.name,
             flavor: req.body.flavor,
-            type: req.body.type,
+            glaze: req.body.glaze,
             floor: req.body.floor,
         }
         const result = await Cakes.findByIdAndDelete(req.params.id, data);
