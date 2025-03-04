@@ -14,7 +14,7 @@ const NavbarMenu = [
   {
     id: 2,
     title: "Productes",
-    link: "/produkty",
+    link: "/cakes",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const NavbarMenu = [
   {
     id: 4,
     title: "Shop",
-    link: "#",
+    link: "/shop",
   },
   {
     id: 5,
@@ -38,10 +38,10 @@ const Navbar = () => {
   return (
     <>
     <nav>
-      <div className="container flex justify-between items-center py-5 md:pt-4">
-        <div className="text-2xl flex items-center gap-2 font-bold uppercase">
-          <p className="text-purple-700">Cake</p>
-          <p className="text-blue-500">Shop</p>
+      <div className="border-y-2 bg-pink-400 container flex justify-between items-center py-5 ">
+        <div className="text-2xl flex items-center gap-2  uppercase">
+          <p className="text-white font-averia">Cake</p>
+          <p className="text-white font-averia">Shop</p>
           <SiCakephp className="text-pink-500" />
         </div>
         <div className="hidden md:block">
@@ -50,7 +50,7 @@ const Navbar = () => {
               <li key={menu.id}>
                 <a
                   href={menu.link}
-                  className="inline-block py-1 px-3 hover:text-red-500 hover:shadov-[0_3px_0_-1px_#ef4444] font-semibold"
+                  className=" py-1 px-3 hover:text-red-500 hover:shadov-[0_3px_0_-1px_#ef4444] font-semibold"
                 >
                   {menu.title}
                 </a>

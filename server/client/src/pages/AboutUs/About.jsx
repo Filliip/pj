@@ -45,16 +45,16 @@ const Navbar = () => {
     <nav className="bg-pink-400">
       <div className="container flex justify-between items-center py-5 md:pt-4">
         <div className="text-2xl flex items-center gap-2 font-bold uppercase">
-          <motion.p
+          <p
           variants={FadeRight(0.6)}
           initial="hidden"
           animate="visible"
-          className="text-purple-700">Cake</motion.p>
-          <motion.p
+          className="text-white font-averia">Cake</p>
+          <p
           variants={FadeRight(0.6)}
           initial="hidden"
           animate="visible"
-          className="text-violet-500">Shop</motion.p>
+          className="text-white font-averia">Shop</p>
           <SiCakephp className="text-pink-500" />
         </div>
         <div className="hidden md:block">
@@ -160,6 +160,7 @@ const Navbar = () => {
             <a href="/about" className="hover:text-gray-400 px-5">O nás</a>
             <a href="/" className="hover:text-gray-400 px-5">Kontakt</a>
             <a href="/" className="hover:text-gray-400 px-5">Kontakt</a>
+            <a href="/SignUp" className="hover:text-gray-400 px-5">Registrovat</a>
           </div>
         </div>
 

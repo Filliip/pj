@@ -55,20 +55,61 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className=" flex justify-center items-cemter">
+        <div className=" flex justify-center items-cemter py-5">
           <motion.img
-            variants={FadeRight(0.1)}
+            variants={FadeRight(0.)}
             initial="hidden"
             animate="visible"
             src={myImage}
             alt=""
-            className=" shadow-[2px_1py_1px_-2px_#de0029] hover:!scale-80 bg-pink-300 duration-300 [350px] md:w-[550px] drop-shadow rounded-full px-1 py-1"
+            className=" shadow-[2px_1py_1px_-2px_#de0029] hover:!scale-80  duration-300 [350px] md:w-[550px] drop-shadow rounded-full px-1 py-1 "
           />
         </div>
       </div>
 
       
+      <footer className="bg-gray-800 text-white py-6">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <p>&copy; Cake shop je ready</p>
+          </div>
+          <div>
+            <a href="/" className="hover:text-gray-400 px-5">Domů</a>
+            <a href="/about" className="hover:text-gray-400 px-5">O nás</a>
+            <a href="/" className="hover:text-gray-400 px-5">Kontakt</a>
+            <a href="/" className="hover:text-gray-400 px-5">Kontakt</a>
+            <a href="/SignUp" className="hover:text-gray-400 px-5">Registrovat</a>
+          </div>
+        </div>
 
+        
+
+        
+        <div className="grid grid-cols-3 gap-4">
+          <div
+            className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
+            onClick={() => alert("Kliknul jsi na první box")}
+          >
+            <p className="text-center">Kontaktuj nás</p>
+          </div>
+
+          <div
+            className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
+            onClick={() => alert("Kliknul jsi na druhý box")}
+          >
+            <p className="text-center">click</p>
+          </div>
+
+          <div
+            className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
+            onClick={() => alert("Kliknul jsi na třetí box")}
+          >
+            <p className="text-center">click</p>
+          </div>
+        </div>
+      </div>
+    </footer>
       
     </>
   );

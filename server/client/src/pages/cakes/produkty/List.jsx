@@ -1,7 +1,10 @@
-import { getAllCakes } from "../../models/cakes";
+import { getAllCakes } from "../../../models/cakes";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ListCell from "./ListCell";
+import ListCell from "../ListCell";
+import Footer from "../../../components/footer/Footer";
+import Navbar from "../../AboutUs/About";
+
 
 
 
@@ -40,15 +43,17 @@ export default function List() {
 
   return (
     <>
-      
-      {cakes.map((cakes, index) => (
-        <ListCell key={index} {...cakes}/>
-      ))} 
-      <Link to={"/"} className="rounded-lg bg-purple-400 py-10 px-10 relative left-5 top-60">
-        <button>Go back</button>
-      </Link>
+      <div className="grid grid-cols-3 gap-y-5 relative top-5 left-20">
+        {cakes.map((cakes, index) => (
+          <ListCell key={index} {...cakes} />
+        ))}
+      </div>
+      <div className="relative top-150">
+        <Footer />
+      </div>
+      <div>
+        
+      </div>
     </>
-    
   );
 }
-
