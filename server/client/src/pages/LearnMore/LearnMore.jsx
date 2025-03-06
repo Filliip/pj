@@ -2,6 +2,7 @@ import React from "react";
 import { SiCakephp } from "react-icons/si";
 import { GiShoppingCart } from "react-icons/gi";
 import { RiMenu4Line } from "react-icons/ri";
+import Footer from "../../components/footer/Footer";
 
 
 const NavbarMenu = [
@@ -43,7 +44,7 @@ const Navbar = () => {
   return (
     <>
     <nav>
-      <div className="container flex justify-between items-center py-5 md:pt-4">
+      <div className="container flex justify-between items-center py-5 md:pt-4 bg-pink-400">
         <div className="text-2xl flex items-center gap-2 font-bold uppercase">
           <p className="text-purple-700">Cake</p>
           <p className="text-blue-500">Shop</p>
@@ -74,7 +75,9 @@ const Navbar = () => {
     </nav>
     
 
-
+          <div className="mt-180">
+            <Footer />
+          </div>
     
     </>
   );
