@@ -75,6 +75,14 @@ const Navbar = () => {
     </nav>
     
 
+
+          <div>
+            <div>
+              
+            </div>
+          </div>
+
+
           <div className="mt-180">
             <Footer />
           </div>

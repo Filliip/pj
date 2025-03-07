@@ -1,5 +1,5 @@
 export const getAllCakes = async () => {
-  const req = await fetch("http://localhost:3000/cakes", {
+  const req = await fetch("http://localhost:3000/produkty", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

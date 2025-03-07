@@ -113,7 +113,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <footer className="bg-gray-800 text-white py-6 relative top-110">
+      <footer className="bg-gray-800 text-white py-6 relative top-80">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-6">
             <div>
@@ -126,12 +126,10 @@ const Hero = () => {
               <a href="/about" className="hover:text-gray-400 px-5">
                 O nás
               </a>
-              <a href="/" className="hover:text-gray-400 px-5">
+              <a href="/contact" className="hover:text-gray-400 px-5">
                 Kontakt
               </a>
-              <a href="/" className="hover:text-gray-400 px-5">
-                Kontakt
-              </a>
+              
               <a href="/SignUp" className="hover:text-gray-400 px-5">
                 Registrovat
               </a>

@@ -29,7 +29,7 @@ const NavbarMenu = [
   {
     id: 4,
     title: "Shop",
-    link: "#",
+    link: "/shop",
   },
   {
     id: 5,
@@ -158,8 +158,7 @@ const Navbar = () => {
           <div>
             <a href="/" className="hover:text-gray-400 px-5">Domů</a>
             <a href="/about" className="hover:text-gray-400 px-5">O nás</a>
-            <a href="/" className="hover:text-gray-400 px-5">Kontakt</a>
-            <a href="/" className="hover:text-gray-400 px-5">Kontakt</a>
+            <a href="/contact" className="hover:text-gray-400 px-5">Kontakt</a>
             <a href="/SignUp" className="hover:text-gray-400 px-5">Registrovat</a>
           </div>
         </div>
@@ -172,7 +171,7 @@ const Navbar = () => {
             className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
             onClick={() => alert("Kliknul jsi na první box")}
           >
-            <p className="text-center">Kontaktuj nás</p>
+            <p className="text-center">Jak nás kontaktovat</p>
           </div>
 
           <div
