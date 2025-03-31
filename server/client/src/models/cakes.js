@@ -1,5 +1,5 @@
 export const getAllCakes = async () => {
-  const req = await fetch("http://localhost:3000/produkty", {
+  const req = await fetch("http://localhost:3000/cakes", {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const getCakesById = async (id) => {
   };
 };
 export const createCakes = async (formData) => {
-  const req = await fetch(`http://localhost:5173/cakes`, {
+  const req = await fetch(`http://localhost:3000/cakes`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -37,6 +37,7 @@ export const createCakes = async (formData) => {
     method: "POST",
     body: JSON.stringify(formData),
   });
+  console.log(req)
   const data = await req.json();
   return {
     status: req.status,

@@ -58,12 +58,16 @@ export default function View() {
   return (
     <>
       <p>{cakes.name}</p>
-      <p>{cakes.temperature}</p>
-      <p>{cakes.type}</p>
+      <p>{cakes.glaze}</p>
+      <p>{cakes.floor}</p>
+      <p>{cakes.flavor}</p>
+      
+      
+
       <form>
         <input
           type="text"
-          placeholder="Enter light name"
+          placeholder="Enter cake  name"
           onChange={handleInput}
         />
         <button onClick={handleButton}>Delete</button>

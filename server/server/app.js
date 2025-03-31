@@ -4,6 +4,13 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+const CakesRouter = require("./routes/cakes");
+
+var app = express();
 
 mongoose
   .connect(
@@ -13,44 +20,7 @@ mongoose
     console.log("database connected");
   })
   .catch((err) => console.log(err));
-const cors = require("cors");
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail', 
-  auth: {
-    user: 'tvuj.email@gmail.com',  
-    pass: 'tvé_heslo',  
-  },
-});
-
-app.post('/send-message', (req, res) => {
-  const { name, email, subject, message } = req.body;
-
-  const mailOptions = {
-    from: email,
-    to: 'tvoje.email@doména.com', 
-    
-    subject: subject,
-    text: `Zpráva od: ${name} (${email})\n\n${message}`,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).json({ success: false, message: 'Došlo k chybě při odesílání zprávy.' });
-    }
-    res.json({ success: true, message: 'Zpráva byla úspěšně odeslána!' });
-  });
-});
-
-app.listen(port, () => {
-  console.log(`Server běží na http://localhost:${port}`);
-});
-
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-const CakesRouter = require("./routes/cakes");
-
-var app = express();
 app.use(cors());
 
 app.set("views", path.join(__dirname, "views"));
@@ -66,18 +36,38 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/cakes", CakesRouter);
 
+app.post("/send-message", (req, res) => {
+  const { name, email, subject, message } = req.body;
+
+  const mailOptions = {
+    from: email,
+    to: "tvoje.email@doména.com",
+
+    subject: subject,
+    text: `Zpráva od: ${name} (${email})\n\n${message}`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return res
+        .status(500)
+        .json({
+          success: false,
+          message: "Došlo k chybě při odesílání zprávy.",
+        });
+    }
+    res.json({ success: true, message: "Zpráva byla úspěšně odeslána!" });
+  });
+});
 
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
-
 app.use(function (err, req, res, next) {
-  
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
- 
   res.status(err.status || 500);
   res.render("error");
 });

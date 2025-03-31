@@ -12,6 +12,7 @@ import UpdateForm from "./cakes/UpdateForm";
 import LearnMore from "./LearnMore/LearnMore";
 import Shop from "./shop/shop";
 import Contact from "./Contact/Contact"
+import Product from "../pages/Product"
 
 export default function AppRouter() {
   return (
@@ -27,6 +28,7 @@ export default function AppRouter() {
         <Route path="/learnmore" element={<LearnMore></LearnMore>} />
         <Route path="/shop" element={<Shop></Shop>} />
         <Route path="/contact" element={<Contact></Contact>} />
+        <Route path="/produkty" element={<Product></Product>} />
 
 
         <Route path="/" element={<Home />} />

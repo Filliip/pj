@@ -34,6 +34,7 @@ export default function CreateCakesForm() {
         <input type ="text" name="flavor" placeholder="Enter flavor" required onChange={handleInput}/>
         <input type ="text" name="glaze" placeholder="Enter glaze" required onChange={handleInput}/>
         <input type ="Number" name="floor" placeholder="Enter floor" required onChange={handleInput}/>
+        
         <button onClick={handleButton}>Create new cakes</button>
       </form>
       <Link to={"/"}>
