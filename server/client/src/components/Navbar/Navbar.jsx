@@ -14,7 +14,7 @@ const NavbarMenu = [
   {
     id: 2,
     title: "Productes",
-    link: "/cakes",
+    link: "/produkty",
   },
   {
     id: 3,

@@ -12,7 +12,9 @@ import UpdateForm from "./cakes/UpdateForm";
 import LearnMore from "./LearnMore/LearnMore";
 import Shop from "./shop/shop";
 import Contact from "./Contact/Contact"
-import Product from "../pages/Product"
+import Product from "../pages/produkty/Product"
+import Products from "../pages/produkty/Products"
+
 
 export default function AppRouter() {
   return (
@@ -29,6 +31,8 @@ export default function AppRouter() {
         <Route path="/shop" element={<Shop></Shop>} />
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/produkty" element={<Product></Product>} />
+        <Route path="/detail/:id" element={<Products></Products>} />
+        
 
 
         <Route path="/" element={<Home />} />

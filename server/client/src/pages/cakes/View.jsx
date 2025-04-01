@@ -61,6 +61,7 @@ export default function View() {
       <p>{cakes.glaze}</p>
       <p>{cakes.floor}</p>
       <p>{cakes.flavor}</p>
+      <p>{cakes.price}</p>
       
       
 

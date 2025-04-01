@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoMdArrowBack } from "react-icons/io";
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -31,6 +32,14 @@ function Login() {
   };
 
   return (
+<>
+
+<a href="http://localhost:5173/" className='w-fit inline-block'>
+  <div className='relative left-5 top-5 w-5'>
+    <IoMdArrowBack  />
+  </div>
+  </a>
+
     <div className="flex items-center justify-center min-h-screen bg-gray-100 h-screen bg-gradient-to-r from-pink-500 via-pink-200 to-purple-200">
       <div className="w-full max-w-sm p-8 rounded-lg shadow-2xl ">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">Přihlásit se</h2>
@@ -67,6 +76,7 @@ function Login() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 

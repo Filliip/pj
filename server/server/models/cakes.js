@@ -5,6 +5,7 @@ const schema = mongoose.Schema({
     flavor: {type: String, required: true},
     glaze: {type: String,  required: true},
     floor: {type: Number,  required: true},
+    price: {type: Number,  required: true},
     
 
 })
