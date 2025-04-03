@@ -22,7 +22,7 @@ function Login() {
       const data = await response.json();
       if (data.success) {
         alert('Přihlášení bylo úspěšné');
-        // Přejdi na jinou stránku nebo proveď další akci po úspěšném přihlášení
+        
       } else {
         setErrorMessage('Chyba při přihlašování: ' + data.message);
       }

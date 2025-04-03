@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 
 function ProductPage() {
@@ -33,15 +34,15 @@ function ProductPage() {
             <div
               key={product._id}
               className=" p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-            >
+            > <Link to={`/detail/${product._id}`}>
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">
                 {product.name}
-              </h2>
+              </h2></Link>
               <p className="text-gray-600 mb-4">
                 {product.description}
-                {product._id}
+               
               </p>
-              <p className=" font-bold text-violet-500">{`Cena: $${product.price}`}</p>
+              <p className=" font-bold text-violet-500">{`Cena: Kč${product.price}`}</p>
             </div>
           ))}
         </div>

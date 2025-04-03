@@ -14,6 +14,7 @@ import Shop from "./shop/shop";
 import Contact from "./Contact/Contact"
 import Product from "../pages/produkty/Product"
 import Products from "../pages/produkty/Products"
+import Cart from "../pages/cart/Cart"
 
 
 export default function AppRouter() {
@@ -32,6 +33,7 @@ export default function AppRouter() {
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/produkty" element={<Product></Product>} />
         <Route path="/detail/:id" element={<Products></Products>} />
+        <Route path="/kosik" element={<Cart></Cart>} />
         
 
 

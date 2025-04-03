@@ -38,7 +38,7 @@ const NavbarMenu = [
   },
 ];
 
-const Navbar = () => {
+const About = () => {
     const [open, setOpen] = React.useState(false)
   return (
     <>
@@ -204,7 +204,7 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default About;
 
 
 
