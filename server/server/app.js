@@ -5,16 +5,20 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+const dotenv = require("dotenv");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const CakesRouter = require("./routes/cakes");
+
+
+dotenv.config();
+const DB_KEY = process.env.DB_KEY;
 
 var app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://admin:adminadmin@cluster0.qbfby.mongodb.net/?retryWrites=true&w=majority&appName=cakes.cakes1"
+    DB_KEY
   )
   .then(() => {
     console.log("database connected");
