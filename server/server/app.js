@@ -10,16 +10,13 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const CakesRouter = require("./routes/cakes");
 
-
 dotenv.config();
 const DB_KEY = process.env.DB_KEY;
 
 var app = express();
 
 mongoose
-  .connect(
-    DB_KEY
-  )
+  .connect(DB_KEY)
   .then(() => {
     console.log("database connected");
   })
@@ -53,12 +50,10 @@ app.post("/send-message", (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return res
-        .status(500)
-        .json({
-          success: false,
-          message: "Došlo k chybě při odesílání zprávy.",
-        });
+      return res.status(500).json({
+        success: false,
+        message: "Došlo k chybě při odesílání zprávy.",
+      });
     }
     res.json({ success: true, message: "Zpráva byla úspěšně odeslána!" });
   });

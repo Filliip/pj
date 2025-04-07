@@ -1,95 +1,67 @@
 import React from "react";
-import { SiCakephp } from "react-icons/si";
-import { GiShoppingCart } from "react-icons/gi";
-import { RiMenu4Line } from "react-icons/ri";
-import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/footer/footer";
 
-
-const NavbarMenu = [
-  {
-    id: 1,
-    title: "Home",
-    link: "/",
-  },
-  
-  {
-    id: 2,
-    title: "Productes",
-    link: "/produkty",
-  },
-  {
-    id: 3,
-    title: "About",
-    link: "/About",
-  },
-  {
-    id: 4,
-    title: "Shop",
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Register",
-    link: "/SignUp",
-  },
-  {
-    id: 5,
-    title: "Zpátky",
-    link: "/About",
-  },
-];
-
-const Navbar = () => {
-    const [open, setOpen] = React.useState(false)
+function Learnomore() {
   return (
-    <>
-    <nav>
-      <div className="container flex justify-between items-center py-5 md:pt-4 bg-pink-400">
-        <div className="text-2xl flex items-center gap-2 font-bold uppercase">
-          <p className="text-purple-700">Cake</p>
-          <p className="text-blue-500">Shop</p>
-          <SiCakephp className="text-pink-500" />
+
+  <>
+  <Navbar />
+    <div className="text-gray-900 py-12 flex items-center">
+      <div className="container mx-auto text-center min-h-screen">
+        <h1 className="text-4xl font-bold text-pink-600 mb-6">
+          Vítejte na Learnomore!
+        </h1>
+        <p className="text-lg mb-8">
+        LearnomoreLearnomoreLearnomoreLearnomoreLearnomoreLearnomoreLearnomoreLearnomoreLearnomoreLearnomore
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-pink-600 mb-4">
+            Naše lahodné dorty
+
+            </h2>
+            <p>
+            Naše dorty jsou více než jen dezert – jsou uměleckým dílem,
+             které přinese radost a nezapomenutelný zážitek na každou oslavu.
+             Každý dort je pečlivě připraven s láskou,
+             kvalitními ingrediencemi a s ohledem na detaily, které z něj činí dokonalý doplněk každé příležitosti.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-pink-600 mb-4">
+            Rozmanité druhy pro každou příležitost            </h2>
+            <p>
+            Ať už plánujete narozeniny, svatbu, firemní akci nebo jen malou oslavu, máme pro vás širokou nabídku dortů.
+             Od klasických čokoládových a vanilkových až po speciální bezlepkové a veganské varianty.
+              U nás najdete dort, který uspokojí každého.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-pink-600 mb-4">
+            Ruční výroba a kvalitní ingredience
+            </h2>
+            <p>
+            Všechny naše dorty jsou vyráběny ručně, s důrazem na čerstvost a kvalitu. Používáme pouze ty nejlepší suroviny,
+             které zajišťují nejen výjimečnou chuť,
+             ale i dokonalý vzhled. Každý dort je pečený na míru podle přání našich zákazníků.
+            </p>
+          </div>
         </div>
-        <div className="hidden md:block">
-          <ul className="flex items-center gap-6 text-gray-600">
-            {NavbarMenu.map((menu) => (
-              <li key={menu.id}>
-                <a
-                  href={menu.link}
-                  className="inline-block py-1 px-3 hover:text-red-500 hover:shadov-[0_3px_0_-1px_#ef4444] font-semibold"
-                >
-                  {menu.title}
-                </a>
-              </li>
-            ))}
-            <button className="text-2xl hover:bg-pink-500 hover:text-white rounded-full p-2 duration-200">
-              <GiShoppingCart />
-            </button>
-          </ul>
-        </div>
-        <div className="md:hidden" onClick={() =>
-            setOpen(!open)}>
-          <RiMenu4Line className="text-4xl" />
-        </div>
+
+        
       </div>
-    </nav>
-    
+    </div>
+<div className="">
+<Footer />
+</div>
 
 
-          <div>
-            <div>
-              
-            </div>
-          </div>
-
-
-          <div className="mt-180">
-            <Footer />
-          </div>
-    
     </>
   );
-};
+}
 
-export default Navbar;
-
+export default Learnomore;

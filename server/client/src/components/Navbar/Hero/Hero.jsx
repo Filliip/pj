@@ -6,6 +6,7 @@ import { FadeUp } from "../../../utility/animation";
 import { FadeLeft } from "../../../utility/animation";
 import { motion } from "framer-motion";
 import myImage3 from "../../../assets/myImage3.png"
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -50,7 +51,9 @@ const Hero = () => {
                 <span>
                   <IoBagHandleOutline />
                 </span>
+              <Link to={"/produkty"}>
                 Order now
+                </Link>
               </motion.button>
             </div>
           </div>

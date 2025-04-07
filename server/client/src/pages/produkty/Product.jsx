@@ -42,8 +42,10 @@ function ProductPage() {
                 {product.description}
                
               </p>
-              <p className=" font-bold text-violet-500">{`Cena: Kč${product.price}`}</p>
+              <p className=" font-bold text-gray-500">{`Cena: Kč${product.price}`}</p>
             </div>
+
+            
           ))}
         </div>
       </div>

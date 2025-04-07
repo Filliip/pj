@@ -22,11 +22,8 @@ const NavbarMenu = [
     title: "About",
     link: "/About",
   },
-  {
-    id: 4,
-    title: "Shop",
-    link: "/shop",
-  },
+  
+   
   {
     id: 5,
     title: "Register",
@@ -41,8 +38,9 @@ const Navbar = () => {
       <nav>
         <div className="border-y-2 bg-pink-400 container flex justify-between items-center py-5 ">
           <div className="text-2xl flex items-center gap-2  uppercase">
-            <p className="text-white font-averia">Cake</p>
-            <p className="text-white font-averia">Shop</p>
+            <Link to={"/"}>
+            <p className="text-white font-averia">Cake Shop</p>
+            </Link>
 
             <SiCakephp className="text-pink-500" />
           </div>
