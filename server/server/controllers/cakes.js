@@ -1,4 +1,4 @@
-const { body } = require("framer-motion/client");
+
 const Cakes = require("../models/cakes")
 
 exports.getAllCakes = async (req, res, next) => {
