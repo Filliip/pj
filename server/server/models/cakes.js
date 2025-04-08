@@ -6,6 +6,7 @@ const schema = mongoose.Schema({
     glaze: {type: String,  required: true},
     floor: {type: Number,  required: true},
     price: {type: Number,  required: true},
+    imagePath: {type: String,  required: true},
     
 
 })

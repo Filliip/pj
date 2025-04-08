@@ -20,28 +20,7 @@ export default function footer() {
         
 
         
-        <div className="grid grid-cols-3 gap-4">
-          <div
-            className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
-            onClick={() => alert("Kliknul jsi na první box")}
-          >
-            <p className="text-center">Jak nás kontaktovat</p>
-          </div>
-
-          <div
-            className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
-            onClick={() => alert("Kliknul jsi na druhý box")}
-          >
-            <p className="text-center">click</p>
-          </div>
-
-          <div
-            className="bg-pink-400 text-white p-6 rounded-lg cursor-pointer hover:bg-pink-600 transition"
-            onClick={() => alert("Kliknul jsi na třetí box")}
-          >
-            <p className="text-center">click</p>
-          </div>
-        </div>
+        
       </div>
     </footer>
     </>

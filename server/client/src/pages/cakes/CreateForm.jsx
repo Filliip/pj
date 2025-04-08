@@ -35,6 +35,7 @@ export default function CreateCakesForm() {
         <input type ="text" name="glaze" placeholder="Enter glaze" required onChange={handleInput}/>
         <input type ="Number" name="floor" placeholder="Enter floor" required onChange={handleInput}/>
         <input type ="Number" name="price" placeholder="Enter price" required onChange={handleInput}/>
+        <input type ="text" name="imagePath" placeholder="Enter imagePath" required onChange={handleInput}/>
         
         <button onClick={handleButton}>Create new cakes</button>
       </form>

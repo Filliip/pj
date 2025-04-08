@@ -5,10 +5,10 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const dotenv = require("dotenv");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const CakesRouter = require("./routes/cakes");
+const dotenv = require("dotenv");
 
 dotenv.config();
 const DB_KEY = process.env.DB_KEY;

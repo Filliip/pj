@@ -68,7 +68,7 @@ export default function Update() {
         />
         <input
           type="number"
-          name="temperature"
+          name="dan"
           placeholder=""
           required
           onChange={handleInput}
@@ -82,6 +82,15 @@ export default function Update() {
           required
           onChange={handleInput}
           defaultValue={cakes.type}
+
+        />
+                <input
+          type="text"
+          name="imagePath"
+          placeholder="Enter imagePath"
+          required
+          onChange={handleInput}
+          defaultValue={cakes.imagePath}
 
         />
         <button onClick={handleButton}>Update Cakes</button>
