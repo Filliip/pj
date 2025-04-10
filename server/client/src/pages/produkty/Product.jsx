@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
+import { FaCartPlus } from "react-icons/fa6";
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
@@ -38,21 +39,25 @@ function ProductPage() {
                 <img
                   src={product.imagePath}
                   alt="cake"
-                  className="rounded-lg w-full h-48 object-cover mb-4"
+                  className="rounded-lg w-full h-48 object-contain mb-4"
                 />
                 <h2 className="text-xl font-semibold text-gray-800 mb-2">
                   {product.name}
                 </h2>
               </Link>
+              
               <p className="text-gray-600 mb-2">{product.description}</p>
-              <p className="font-bold text-gray-500">{`Cena: Kč${product.price}`}</p>
+              <p className="font-bold text-gray-500 text-xl">{`Cena: Kč ${product.price}`}
+            
+          </p>
+              
             </div>
           ))}
+          
         </div>
       </div>
 
-<Footer />
-
+      <Footer />
     </>
   );
 }
