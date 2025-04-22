@@ -40,7 +40,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/kosik"
-                  className="text-2xl hover:bg-pink-500 hover:text-white rounded-full p-2 duration-200"
+                  className="text-2xl  hover:text-white rounded-full p-2 duration-200"
                 >
                   <GiShoppingCart />
                 </Link>

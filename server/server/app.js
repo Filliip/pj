@@ -22,6 +22,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+
 app.use(cors());
 
 app.set("views", path.join(__dirname, "views"));
@@ -57,6 +58,37 @@ app.post("/send-message", (req, res) => {
     }
     res.json({ success: true, message: "Zpráva byla úspěšně odeslána!" });
   });
+});
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2022-08-01",
+});
+
+app.get("/config", (req, res) => {
+  console.log(process.env.STRIPE_PUBLISHABLE_KEY);
+  res.send({
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  });
+});
+
+app.post("/create-payment-intent", async (req, res) => {
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      currency: "EUR",
+      amount: 1999,
+      automatic_payment_methods: { enabled: true },
+    });
+
+    res.send({
+      clientSecret: paymentIntent.client_secret,
+    });
+  } catch (e) {
+    return res.status(400).send({
+      error: {
+        message: e.message,
+      },
+    });
+  }
 });
 
 app.use(function (req, res, next) {
