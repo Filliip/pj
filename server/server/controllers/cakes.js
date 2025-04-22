@@ -39,10 +39,6 @@ exports.getCakesById = async (req, res, next) => {
 exports.createCakes = async (req, res, next) => {
     try {
 
-        console.log(
-            req,res,body
-        )
-
         const data = new Cakes({
             name: req.body.name,
             flavor: req.body.flavor,
