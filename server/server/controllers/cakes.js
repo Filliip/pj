@@ -46,6 +46,7 @@ exports.createCakes = async (req, res, next) => {
             floor: req.body.floor,
             price: req.body.price,
             imagePath: req.body.imagePath,
+            cakeText: req.body.cakeText,
           
         })
         const result = await data.save();
@@ -74,6 +75,7 @@ exports.updateCakes = async (req,res,next) => {
             floor: req.body.floor,
             price: req.body.price,
             imagePath: req.body.imagePath,
+            cakeText: req.body.cakeText,
             
         }
         const result = await Cakes.findByIdAndUpdate(req.params.id, data);
@@ -102,6 +104,7 @@ exports.deleteCakes = async (req,res, next) => {
             floor: req.body.floor,
             price: req.body.price,
             imagePath: req.body.imagePath,
+            cakeText: req.body.cakeText,
             
         }
         const result = await Cakes.findByIdAndDelete(req.params.id, data);

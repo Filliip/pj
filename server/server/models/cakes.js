@@ -7,6 +7,7 @@ const schema = mongoose.Schema({
     floor: {type: Number,  required: true},
     price: {type: Number,  required: true},
     imagePath: {type: String,  required: true},
+    
    
 
     

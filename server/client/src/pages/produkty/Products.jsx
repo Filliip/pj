@@ -102,8 +102,8 @@ const ProductPage = () => {
 
             
             <div className="mt-4 text-lg text-gray-700">
-              <h2 className="font-semibold">Popis produktu:</h2>
-              <p>{product.description || "Tento produkt je jedinečný, ručně vyráběný dort s přírodními ingrediencemi."}</p>
+              <h2 className="font-semibold">Product description:</h2>
+              <p>{product.description || "These concise descriptions should work perfectly for enticing customers and giving them a taste of what to expect! Let me know if you'd like to tweak anything."}</p>
             </div>
 
             <div className="mt-6 flex items-center space-x-4">
@@ -126,7 +126,7 @@ const ProductPage = () => {
               onClick={addToCart}
               className="mt-6 w-full md:w-auto bg-pink-600 text-white py-3 px-6 rounded-lg hover:bg-pink-700 focus:outline-none transition"
             >
-              Přidat do košíku
+              Add to cart
             </button>
           </div>
         </div>
@@ -140,7 +140,7 @@ const ProductPage = () => {
             animate="visible"
             className="fixed top-23 left-1/4 transform -translate-x-1/2 bg-pink-500 text-white py-3 px-6 rounded-lg shadow-lg opacity-100 transition-opacity duration-300"
           >
-            <p>{`${product.name} byl přidán do košíku`}</p>
+            <p>{`${product.name} added to the cart`}</p>
           </motion.div>
         )}
       </Link>
