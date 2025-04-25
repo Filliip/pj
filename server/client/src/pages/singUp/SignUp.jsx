@@ -1,83 +1,84 @@
 import React, { useState } from 'react';
-import { IoMdArrowBack } from "react-icons/io";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Pro přesměrování po úspěšném přihlášení
 
-function Login() {
-  const [username, setUsername] = useState('');
+function LoginForm() {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
+  // Funkce pro odeslání formuláře
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userData = { username, password };
 
     try {
-      const response = await fetch('http://localhost:5000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userData),
+      const response = await axios.post('http://localhost:3000/login', {
+        email,
+        password,
       });
 
-      const data = await response.json();
-      if (data.success) {
-        alert('Přihlášení bylo úspěšné');
-        
-      } else {
-        setErrorMessage('Chyba při přihlašování: ' + data.message);
-      }
-    } catch (error) {
-      setErrorMessage('Došlo k chybě při komunikaci se serverem.');
+      // Uložení tokenu do localStorage
+      localStorage.setItem('jwt_token', response.data.token);
+
+      // Přesměrování na domovskou stránku po úspěšném přihlášení
+      navigate('/');
+    } catch (err) {
+      // Zobrazení chyby, pokud něco nevyšlo
+      setError('Nesprávný email nebo heslo');
     }
   };
 
   return (
-<>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+        <h2 className="text-2xl font-semibold text-center mb-6">Přihlášení</h2>
 
-<a href="http://localhost:5173/" className='w-fit inline-block'>
-  <div className='relative left-5 top-5 w-5'>
-    <IoMdArrowBack  />
-  </div>
-  </a>
+        {error && (
+          <div className="text-red-500 text-center mb-4">
+            {error}
+          </div>
+        )}
 
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 h-screen bg-gradient-to-r from-pink-500 via-pink-200 to-purple-200">
-      <div className="w-full max-w-sm p-8 rounded-lg shadow-2xl ">
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">Přihlásit se</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-sm font-medium text-gray-600">Uživatelské jméno</label>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              E-mail
+            </label>
             <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
-              className="w-full mt-2 px-4 py-2 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-600">Heslo</label>
+
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              Heslo
+            </label>
             <input
-              id="password"
               type="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
-              className="w-full mt-2 px-4 py-2 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
-          {errorMessage && <p className="text-sm text-red-600">{errorMessage}</p>}
+
           <button
             type="submit"
-            className="w-full mt-4 py-2 bg-pink-600 text-white font-semibold rounded-lg hover:!scale-97 duration-500 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition duration-200"
           >
             Přihlásit se
           </button>
         </form>
       </div>
     </div>
-    </>
   );
 }
 
-export default Login;
+export default LoginForm;

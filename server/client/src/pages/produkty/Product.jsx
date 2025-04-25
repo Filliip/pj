@@ -3,14 +3,13 @@ import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
-import { FaCartPlus } from "react-icons/fa6";
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(10000);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     axios
@@ -24,85 +23,84 @@ function ProductPage() {
       });
   }, []);
 
-  const handleSearch = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
-    filterProducts(value, minPrice, maxPrice);
-  };
-
   const handlePriceFilter = () => {
-    filterProducts(searchTerm, minPrice, maxPrice);
+    if (minPrice > maxPrice) {
+      setError("The minimum price cannot be higher than the maximum.");
+      return;
+    }
+    setError("");
+    filterProducts(minPrice, maxPrice);
   };
 
-  const filterProducts = (search, min, max) => {
+  const filterProducts = (min, max) => {
     const filtered = products.filter((product) => {
-      const nameMatch =
-        product.name.toLowerCase().includes(search.toLowerCase()) ||
-        product.description.toLowerCase().includes(search.toLowerCase());
-      const priceMatch = product.price >= min && product.price <= max;
-
-      return nameMatch && priceMatch;
+      return product.price >= min && product.price <= max;
     });
     setFilteredProducts(filtered);
   };
 
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
 
       <div className="bg-gradient-to-r from-pink-500 via-pink-200 to-purple-200 min-h-screen px-4">
-        <div className="font-averia text-pink-400 drop-shadow- text-4xl text-center py-10">
+        <div className="font-averia text-pink-400 drop-shadow text-4xl text-center py-10">
           <p>Cakes to order</p>
         </div>
 
-        <div className="mb-6 text-center">
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleSearch}
-            placeholder="Search by flavor or description"
-            className="p-2 rounded-lg border border-gray-300 mb-4"
-          />
-
-          <div className="flex justify-center items-center space-x-4">
-            <div>
-              <label htmlFor="minPrice" className="mr-2">
-                Min Price:{" "}
-              </label>
-              <input
-                type="number"
-                id="minPrice"
-                value={minPrice}
-                onChange={(e) => setMinPrice(Number(e.target.value))}
-                className="p-2 rounded-lg border border-gray-300"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="maxPrice" className="mr-2">
-                Max Price:{" "}
-              </label>
-              <input
-                type="number"
-                id="maxPrice"
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="p-2 rounded-lg border border-gray-300"
-              />
-            </div>
-
-            <button
-              onClick={handlePriceFilter}
-              className="bg-pink-500 text-white p-2 rounded-lg"
-            >
-              Apply Filters
+        <div className="flex justify-center mb-6">
+          <div className="relative group">
+            <button className="bg-pink-500 text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+              Filter by price
             </button>
+
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white p-4 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition-opacity duration-300 z-10">
+              <label className="block mb-2 font-medium text-gray-700 text-center">
+                Price range: {minPrice} Kč – {maxPrice} Kč
+              </label>
+
+              <div className="mb-4">
+                <input
+                  type="range"
+                  min="0"
+                  max="10000"
+                  value={minPrice}
+                  onChange={(e) => setMinPrice(Number(e.target.value))}
+                  className="w-full"
+                />
+                <span className="text-sm text-gray-600">Min: {minPrice} Kč</span>
+              </div>
+
+              <div className="mb-4">
+                <input
+                  type="range"
+                  min="0"
+                  max="10000"
+                  value={maxPrice}
+                  onChange={(e) => setMaxPrice(Number(e.target.value))}
+                  className="w-full"
+                />
+                <span className="text-sm text-gray-600">Max: {maxPrice} Kč</span>
+              </div>
+
+              <button
+                onClick={handlePriceFilter}
+                className="w-full bg-pink-400 text-white py-2 rounded-md hover:bg-pink-500"
+              >
+               Use filter
+              </button>
+
+              {error && (
+                <div className="text-center text-red-600 mt-2 font-medium">
+                  {error}
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 m-8 ">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 m-8">
           {filteredProducts && filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div
@@ -119,14 +117,16 @@ function ProductPage() {
                     {product.name}
                   </h2>
                 </Link>
-
                 <p className="text-gray-600 mb-2">{product.description}</p>
                 <p className="font-bold text-gray-500 text-xl">{`Cena: Kč ${product.price}`}</p>
               </div>
             ))
           ) : (
-            
-            <div className="bg-pink-200 text-grey p-2 rounded-lg ">Cakes not found</div>
+            <Link to={"/"}>
+              <div className="bg-pink-200 text-gray-700 p-2 rounded-lg text-center">
+                Cakes not found
+              </div>
+            </Link>
           )}
         </div>
       </div>

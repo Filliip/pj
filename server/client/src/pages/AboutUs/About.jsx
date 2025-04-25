@@ -6,6 +6,7 @@ import { FadeRight } from "../../utility/animation";
 import {motion} from "framer-motion"
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
+import myImage from "../../assets/myImage.jpg"
 
 
 
@@ -27,11 +28,7 @@ const NavbarMenu = [
     title: "About",
     link: "/About",
   },
-  {
-    id: 4,
-    title: "Shop",
-    link: "/shop",
-  },
+  
   {
     id: 5,
     title: "Register",
@@ -105,7 +102,7 @@ const About = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 items-center">
         <motion.img 
-          src="" 
+          src={myImage}
           alt="Delicious Cake"
           className="rounded-lg shadow-lg mx-auto"
           initial={{ opacity: 0, scale: 0.8 }}

@@ -1,28 +1,31 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 
-export default function footer() {
+const Footer = () => { 
   return (
     <>
-    <footer className="bg-gray-800 text-white py-6">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <p>&copy; Cake shop je ready</p>
+      <footer className="bg-gray-800 text-white py-6">
+        
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 sm:gap-0"> 
+            <div>
+              <p className="text-sm sm:text-base">&copy; Cake shop je ready</p> 
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"> 
+             
+              <Link to="/" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">Domů</Link> 
+              <Link to="/about" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">O nás</Link>
+              <Link to="/contact" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">Kontakt</Link>
+              <Link to="/SignUp" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">Registrovat</Link>
+            </div>
           </div>
-          <div>
-            <a href="/" className="hover:text-gray-400 px-5">Domů</a>
-            <a href="/about" className="hover:text-gray-400 px-5">O nás</a>
-            <a href="/contact" className="hover:text-gray-400 px-5">Kontakt</a>
-            <a href="/SignUp" className="hover:text-gray-400 px-5">Registrovat</a>
-          </div>
+          
         </div>
-
-        
-
-        
-        
-      </div>
-    </footer>
+      </footer>
     </>
-  )
+  );
 }
+
+export default Footer; 
