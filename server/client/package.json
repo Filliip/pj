@@ -15,7 +15,7 @@
     "@stripe/stripe-js": "^7.2.0",
     "@tailwindcss/cli": "^4.0.4",
     "@tailwindcss/vite": "^4.0.3",
-    "axios": "^1.8.4",
+    "axios": "^1.9.0",
     "devtools": "^8.40.2",
     "framer-motion": "^12.4.0",
     "mongodb": "^6.13.0",

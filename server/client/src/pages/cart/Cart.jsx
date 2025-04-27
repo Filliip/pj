@@ -111,7 +111,7 @@ const Cart = () => {
 
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-4 text-center text-pink-500">
-              Produkty
+            products
             </h2>
             <div className="flex justify-center gap-12 flex-wrap">
               {products.map((product) => (
@@ -130,7 +130,7 @@ const Cart = () => {
                     onClick={() => addToCart(product)}
                     className="mt-4 bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 transition-colors duration-300 w-full"
                   >
-                    Přidat do košíku
+                    add to cart
                   </button>
                 </div>
               ))}
@@ -144,7 +144,7 @@ const Cart = () => {
 
           <div className="mt-6">
             {cart.length === 0 ? (
-              <p className="text-gray-500 text-center">Košík je prázdný</p>
+              <p className="text-gray-500 text-center">Cart is empty</p>
             ) : (
               <ul className="space-y-4">
                 {cart.map((item, index) => (

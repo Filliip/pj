@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const NavbarMenu = [
   { id: 1, title: "Home", link: "/" },
-  { id: 2, title: "Productes", link: "/produkty" },
+  { id: 2, title: "products", link: "/produkty" },
   { id: 3, title: "About", link: "/About" },
   { id: 5, title: "Register", link: "/SignUp" },
 ];
@@ -41,7 +41,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/kosik"
-                  className="text-2xl text-white hover:text-red-600 rounded-full p-2 duration-200 transition duration-300"
+                  className="text-2xl text-white hover:text-red-600 rounded-full p-2  transition duration-300"
                 >
                   <GiShoppingCart />
                 </Link>

@@ -1,80 +1,88 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Pro přesměrování po úspěšném přihlášení
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Funkce pro odeslání formuláře
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('Odesílám přihlašovací údaje:', { username, email, password });
 
-    try {
-      const response = await axios.post('http://localhost:3000/login', {
-        email,
-        password,
-      });
+    
+    const authenticationSuccessful = true;
+    const userData = {
+      username: username,
+      email: email,
+    };
 
-      // Uložení tokenu do localStorage
-      localStorage.setItem('jwt_token', response.data.token);
-
-      // Přesměrování na domovskou stránku po úspěšném přihlášení
-      navigate('/');
-    } catch (err) {
-      // Zobrazení chyby, pokud něco nevyšlo
-      setError('Nesprávný email nebo heslo');
+    if (authenticationSuccessful) {
+      localStorage.setItem('user', JSON.stringify(userData));
+      navigate('/profile');
+    } else {
+      console.log('Přihlášení se nezdařilo.');
+      
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-semibold text-center mb-6">Přihlášení</h2>
-
-        {error && (
-          <div className="text-red-500 text-center mb-4">
-            {error}
-          </div>
-        )}
-
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-semibold mb-6 text-gray-800">Přihlášení</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              E-mail
+            <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">
+              User name
+            </label>
+            <input
+              type="text"
+              id="username"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Tvé uživatelské jméno"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+              Email
             </label>
             <input
               type="email"
               id="email"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Tvůj email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />
           </div>
-
           <div className="mb-6">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
               Heslo
             </label>
             <input
               type="password"
               id="password"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Tvé heslo"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
               required
             />
           </div>
-
-          <button
-            type="submit"
-            className="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition duration-200"
-          >
-            Přihlásit se
-          </button>
+          <div className="flex items-center justify-between">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Log in
+            </button>
+            
+          </div>
         </form>
       </div>
     </div>

@@ -5,7 +5,6 @@ import { FadeRight } from "../../../utility/animation";
 import { FadeUp } from "../../../utility/animation";
 import { FadeLeft } from "../../../utility/animation";
 import { motion } from "framer-motion";
-import myImage3 from "../../../assets/myImage3.png";
 import { Link } from "react-router-dom";
 import pozadi1 from "../../../assets/pozadi1.png";
 import I3 from "../../../assets/I3.png";
