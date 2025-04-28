@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import pozadi1 from "../../../assets/pozadi1.png";
 import I3 from "../../../assets/I3.png";
+import Footer from "../../footer/Footer";
 
 const Hero = () => {
   return (
@@ -39,8 +40,7 @@ const Hero = () => {
               animate="visible"
               className="text-sm sm:text-base text-gray-700"
             >
-              Order best cakes for happy life, Order best cakes for happy life
-              Order best cakes for happy lifeOrder best cakes for happy life
+              Indulge in our delicious, freshly made cakes crafted with love and the finest ingredients. Whether it’s for a special occasion or just to satisfy your sweet tooth, we’ve got something perfect for you. Explore our wide variety of cakes, and let us bring a slice of happiness to your day!
             </motion.p>
             <div className="flex justify-center md:justify-start pt-4">
               <motion.button
@@ -86,7 +86,8 @@ const Hero = () => {
             transition={{ duration: 1.2 }}
             className="mt-6 sm:mt-0 text-base sm:text-lg text-center sm:text-left sm:max-w-[500px] lg:max-w-[600px] text-gray-800 leading-relaxed"
           >
-            V našem Cake Shopu každý dort vzniká s láskou a péčí. Používáme jen ty nejlepší suroviny, abychom vytvořili sladkosti, které potěší všechny vaše smysly. Každý kousek pečeme s vášní a precizností, abyste si mohli vychutnat dokonalou chuť a krásu v každém soustu. Ať už slavíte narozeniny, svatbu nebo si jen chcete dopřát něco sladkého, u nás najdete dorty, které jsou nejen chutné, ale i připravené srdcem.
+            At our Cake Shop, every cake is created with love and care. We use only the best ingredients to create sweets that will delight all your senses. We bake each piece with passion and precision so that you can enjoy the perfect taste and beauty in every bite. Whether you are celebrating a birthday, a wedding or just want to treat yourself to something sweet, you will find cakes here that are not only delicious, but also prepared with heart.
+
           </motion.p>
         </div>
       </div>
@@ -107,26 +108,15 @@ const Hero = () => {
             transition={{ duration: 1.2 }}
             className="text-base sm:text-lg md:text-xl text-gray-800 max-w-lg text-center sm:text-left leading-relaxed"
           >
-            V našem Cake Shopu každý dort vzniká s láskou a péčí. Používáme jen ty nejlepší suroviny, abychom vytvořili sladkosti, které potěší všechny vaše smysly. Každý kousek pečeme s vášní a precizností, abyste si mohli vychutnat dokonalou chuť a krásu v každém soustu. Ať už slavíte narozeniny, svatbu nebo si jen chcete dopřát něco sladkého, u nás najdete dorty, které jsou nejen chutné, ale i připravené srdcem.
-          </motion.p>
+Here at Team Cakes, we bake the best cakes to make every moment sweeter. From classic flavors to creative new designs, our cakes are made with passion and perfection. Whether you're celebrating a milestone or just treating yourself, we're here to add some extra sweetness to your day!
+
+</motion.p>
         </div>
       </div>
 
-      <footer className="bg-gray-800 text-white py-6 mt-20">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 mb-6">
-            <div>
-              <p className="text-sm sm:text-base">&copy; Cake Shop 2025</p>
-            </div>
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6">
-              <a href="/" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">Domů</a>
-              <a href="/about" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">O nás</a>
-              <a href="/contact" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">Kontakt</a>
-              <a href="/SignUp" className="hover:text-gray-400 text-sm sm:text-base transition duration-300">Registrovat</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <div>
+        <Footer/>
+      </div>
     </>
   );
 };

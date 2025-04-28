@@ -16,6 +16,7 @@ import Products from "../pages/produkty/Products"
 import Cart from "../pages/cart/Cart"
 import Search from "../pages/search/search"
 import Profile from "./singUp/Profile";
+import Completion from "./platba/completion";
 
 
 export default function AppRouter() {
@@ -36,6 +37,7 @@ export default function AppRouter() {
         <Route path="/kosik" element={<Cart></Cart>} />
         <Route path="/search" element={<Search></Search>} />
         <Route path="/profile" element={<Profile></Profile>} />
+        <Route path="/completion" element={<Completion></Completion>} />
         
 
 

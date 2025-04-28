@@ -10,6 +10,7 @@ function ProductPage() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(10000);
   const [error, setError] = useState("");
+  const [isFilterOpen, setIsFilterOpen] = useState(false); 
 
   useEffect(() => {
     axios
@@ -30,6 +31,7 @@ function ProductPage() {
     }
     setError("");
     filterProducts(minPrice, maxPrice);
+    setIsFilterOpen(false); 
   };
 
   const filterProducts = (min, max) => {
@@ -48,58 +50,70 @@ function ProductPage() {
           <p>Cakes to order</p>
         </div>
 
-        <div className="flex justify-center mb-6">
-          <div className="relative group">
-            <button className="bg-pink-500 text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+        <div className="flex justify-center mb-6 relative">
+          <div className="relative">
+            <button
+              className="bg-pink-500 text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+            >
               Filter by price
             </button>
 
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white p-4 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto pointer-events-none transition-opacity duration-300 z-10">
-              <label className="block mb-2 font-medium text-gray-700 text-center">
-                Price range: {minPrice} Kč – {maxPrice} Kč
-              </label>
+            {isFilterOpen && (
+              <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-full max-w-sm bg-white p-4 rounded-lg shadow-lg opacity-100 pointer-events-auto z-10">
+                <label className="block mb-2 font-medium text-gray-700 text-center">
+                  Price range: {minPrice} Kč – {maxPrice} Kč
+                </label>
 
-              <div className="mb-4">
-                <input
-                  type="range"
-                  min="0"
-                  max="10000"
-                  value={minPrice}
-                  onChange={(e) => setMinPrice(Number(e.target.value))}
-                  className="w-full"
-                />
-                <span className="text-sm text-gray-600">Min: {minPrice} Kč</span>
-              </div>
-
-              <div className="mb-4">
-                <input
-                  type="range"
-                  min="0"
-                  max="10000"
-                  value={maxPrice}
-                  onChange={(e) => setMaxPrice(Number(e.target.value))}
-                  className="w-full"
-                />
-                <span className="text-sm text-gray-600">Max: {maxPrice} Kč</span>
-              </div>
-
-              <button
-                onClick={handlePriceFilter}
-                className="w-full bg-pink-400 text-white py-2 rounded-md hover:bg-pink-500"
-              >
-               Use filter
-              </button>
-
-              {error && (
-                <div className="text-center text-red-600 mt-2 font-medium">
-                  {error}
+                <div className="mb-4">
+                  <input
+                    type="range"
+                    min="0"
+                    max="10000"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(Number(e.target.value))}
+                    className="w-full"
+                  />
+                  <span className="text-sm text-gray-600">Min: {minPrice} Kč</span>
                 </div>
-              )}
-            </div>
+
+                <div className="mb-4">
+                  <input
+                    type="range"
+                    min="0"
+                    max="10000"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(Number(e.target.value))}
+                    className="w-full"
+                  />
+                  <span className="text-sm text-gray-600">Max: {maxPrice} Kč</span>
+                </div>
+
+                <button
+                  onClick={handlePriceFilter}
+                  className="w-full bg-pink-400 text-white py-2 rounded-md hover:bg-pink-500"
+                >
+                  Use filter
+                </button>
+
+                {error && (
+                  <div className="text-center text-red-600 mt-2 font-medium">
+                    {error}
+                  </div>
+                )}
+
+               
+                <button
+                  className="w-full mt-2 bg-gray-200 text-gray-700 py-2 rounded-md hover:bg-gray-300"
+                  onClick={() => setIsFilterOpen(false)} 
+                >
+                  Close Filter
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
-        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 m-8">
           {filteredProducts && filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (

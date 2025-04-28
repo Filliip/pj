@@ -10,6 +10,7 @@ const NavbarMenu = [
   { id: 2, title: "products", link: "/produkty" },
   { id: 3, title: "About", link: "/About" },
   { id: 5, title: "Register", link: "/SignUp" },
+  { id: 5, title: "Profile", link: "/profile" },
 ];
 
 const Navbar = () => {
